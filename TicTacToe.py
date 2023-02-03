@@ -69,7 +69,7 @@ def check_win(board):
         print("Tie Game!")
         return 1
 
-# Check if input is valid 0 = no, 1 = yes
+# Check if input is valid
 def check_valid(move):
     # Is the move in range? 
     if move[0] > 2 or move [1] > 2 or move[0] < 0 or move[1] < 0:
@@ -77,8 +77,6 @@ def check_valid(move):
         return 0
     else:
         return 1
-
-    # Is the space taken
 
 
 # Player input
