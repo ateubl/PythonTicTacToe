@@ -1,7 +1,7 @@
 # Started on 12/20/22
 # Created by Andrew Teubl: andrewteubl@gmail.com
 
-import random
+from random import randint
 
 # Definitions
 board = []
@@ -99,25 +99,11 @@ while win != 1:
         win = check_win(board)
 
 
-    # # Player O move (Computer Opponent)
-    # if win != 1 and valid == 1:
-    #     valid = 0
-    #     while valid == 0:
-    #         move = [randint(0,2)][randint(0,2)]
-    #         valid = check_valid(move)
-            
-    #         if valid == 1:
-    #             board[move[0]][move[1]] = 'o'
-    #             print("", board[0], "\n", board[1], "\n", board[2])
-    #             print("", moves[0], "\n", moves[1], "\n", moves[2])
-    #             win = check_win(board)
-
-
-    # Player O move (Manual Entry)
+    # Player O move (Computer Opponent)
     if win != 1 and valid == 1:
         valid = 0
         while valid == 0:
-            move = [int(x) for x in input("Player O: Enter move location:").split()]
+            move = [randint(0,2), randint(0,2)]
             valid = check_valid(move)
             
             if valid == 1:
