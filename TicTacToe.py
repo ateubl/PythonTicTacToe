@@ -1,4 +1,7 @@
 # Started on 12/20/22
+# Created by Andrew Teubl: andrewteubl@gmail.com
+
+import random
 
 # Definitions
 board = []
@@ -71,13 +74,17 @@ def check_win(board):
 
 # Check if input is valid
 def check_valid(move):
-    # Is the move in range? 
+    
+    # Check to see if the move space is already occupied
+    if board[move[0]][move[1]] == 'x' or board[move[0]][move[1]] == 'o':
+        print("Invalid Move: Space must be empty")
+        return 0
+    # Check to see if the input is within range
     if move[0] > 2 or move [1] > 2 or move[0] < 0 or move[1] < 0:
-        print("Out of range, try again")
+        print("Invalid Input: Entry must be from 0 to 2")
         return 0
     else:
-        return 1
-
+        return 1  
 
 # Player input
 while win != 1:
@@ -91,7 +98,22 @@ while win != 1:
         print("", moves[0], "\n", moves[1], "\n", moves[2])
         win = check_win(board)
 
-    # Player O move
+
+    # # Player O move (Computer Opponent)
+    # if win != 1 and valid == 1:
+    #     valid = 0
+    #     while valid == 0:
+    #         move = [randint(0,2)][randint(0,2)]
+    #         valid = check_valid(move)
+            
+    #         if valid == 1:
+    #             board[move[0]][move[1]] = 'o'
+    #             print("", board[0], "\n", board[1], "\n", board[2])
+    #             print("", moves[0], "\n", moves[1], "\n", moves[2])
+    #             win = check_win(board)
+
+
+    # Player O move (Manual Entry)
     if win != 1 and valid == 1:
         valid = 0
         while valid == 0:
